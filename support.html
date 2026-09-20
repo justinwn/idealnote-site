@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ideal note — Support</title>
+<meta name="description" content="Answers to common questions about ideal note, and how to get in touch.">
+<style>
+  :root {
+    --canvas:#DAEEFF; --ink:#12355B; --body:#1c2b3a; --muted:#4a5b6d; --card:#ffffff;
+    --hair:rgba(18,53,91,.10);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root { --canvas:#0C1826; --ink:#DAEEFF; --body:#dfe8f1; --muted:#9fb0c2; --card:#12222f;
+            --hair:rgba(218,238,255,.12); }
+  }
+  * { box-sizing:border-box; }
+  body {
+    margin:0; padding:48px 16px 96px; background:var(--canvas); color:var(--body);
+    font:17px/1.62 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+  main { max-width:46rem; margin:0 auto; }
+  .wordmark {
+    font-size:2.2rem; font-weight:800; line-height:.96; letter-spacing:-.02em;
+    color:var(--ink); margin:0 0 24px; text-decoration:none; display:inline-block;
+  }
+  section { background:var(--card); border-radius:16px; padding:28px 28px 10px; margin-bottom:22px; }
+  h1 { color:var(--ink); font-size:1.5rem; margin:0 0 20px; }
+  h2 { color:var(--ink); font-size:1.02rem; margin:26px 0 6px; }
+  h2:first-of-type { margin-top:4px; }
+  p { color:var(--muted); margin:0 0 16px; }
+  nav { margin-top:26px; }
+  nav a { color:var(--ink); font-weight:600; text-decoration:none; margin-right:20px; }
+  nav a:hover { text-decoration:underline; }
+  .contact { border:1px solid var(--hair); background:transparent; }
+</style>
+</head>
+<body>
+<main>
+  <a class="wordmark" href="/">ideal<br>note.</a>
+
+  <section class="contact">
+    <h1>Getting in touch</h1>
+    <!-- TODO: put a real contact route here before submitting to App Review.
+         Apple requires the Support URL to offer a genuine way to reach you —
+         a mailto: is fine, and is what most small apps use. Publishing an
+         address does mean it gets scraped, so an alias is worth considering. -->
+    <p>Something not working, or an idea for what it should do next? Write to
+       <strong>[ your support email ]</strong> and you’ll get a reply from the
+       person who made it.</p>
+  </section>
+
+  <section>
+    <h1>Questions people ask</h1>
+
+    <h2>Does it work without a connection?</h2>
+    <p>Yes, all of it. Transcription and note writing both run on the iPhone,
+       and the app makes no network requests at all. A plane, a basement or a
+       sauna are all fine.</p>
+
+    <h2>Do I need Apple Intelligence?</h2>
+    <p>No. Where it’s available — iPhone 15 Pro and newer — it writes the
+       titles, summaries and topics. Where it isn’t, a simpler built-in
+       summariser takes over: plainer notes, but recording, transcription,
+       search, topics and reminders all work the same. Settings tells you
+       which one you’re getting.</p>
+
+    <h2>How long can one recording be?</h2>
+    <p>Up to an hour. It stops itself there rather than quietly filling your
+       phone if a tap gets forgotten in a pocket.</p>
+
+    <h2>What happens if the app is interrupted mid-recording?</h2>
+    <p>You keep almost everything. The words are saved as they’re heard, and
+       the audio is written continuously rather than only at the end, so an
+       interrupted recording costs a few seconds rather than the whole thing.
+       The note is waiting for you the next time you open the app.</p>
+
+    <h2>What if there are no words in the recording?</h2>
+    <p>It describes the sound instead of failing. Music playing, people
+       talking, rain — the note tells you what it heard, and keeps the audio.</p>
+
+    <h2>Do my notes sync between devices?</h2>
+    <p>Not yet. Notes live on the iPhone that recorded them. An iPhone backup
+       includes them, so a new phone restored from backup keeps everything.</p>
+
+    <h2>Does the Apple Watch app work away from my phone?</h2>
+    <p>Yes. The Watch records on its own and queues the audio, which is
+       delivered whenever your iPhone is next in range — including after
+       you’ve closed the app on the Watch. Transcription and summarising then
+       happen on the phone, so a watch note ends up identical to any other.</p>
+
+    <h2>Are the recordings kept after they’re transcribed?</h2>
+    <p>By default, yes, because a transcript is a good record but not a
+       perfect one. You can switch that off in Settings so audio is discarded
+       once the note is written, or delete the recording from an individual
+       note and keep its text.</p>
+
+    <h2>What happens to my notes if I stop subscribing?</h2>
+    <p>They stay exactly where they are, and stay searchable. The subscription
+       only governs recording new ones past the free 250.</p>
+
+    <h2>Where is any of this stored?</h2>
+    <p>In the app’s own storage on your device, and nowhere else. There is no
+       account and no server. Delete the app and it all goes with it.</p>
+  </section>
+
+  <nav>
+    <a href="/">Home</a>
+    <a href="/privacy.html">Privacy Policy</a>
+    <a href="/terms.html">Terms of Use</a>
+  </nav>
+</main>
+</body>
+</html>
