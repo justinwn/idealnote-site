@@ -21,6 +21,7 @@
     --todo:    #0B6E4F;
     --diary:   #721817;
     --shadow:  0 1px 2px rgba(18,53,91,.05), 0 12px 32px rgba(18,53,91,.07);
+    --dot:     rgba(18, 53, 91, 0.18);
   }
   @media (prefers-color-scheme: dark) {
     :root {
@@ -35,6 +36,7 @@
       --todo:   #3DB78B;
       --diary:  #DC8B84;
       --shadow: 0 1px 2px rgba(0,0,0,.3), 0 12px 32px rgba(0,0,0,.35);
+      --dot:    rgba(218, 238, 255, 0.16);
     }
   }
 
@@ -114,32 +116,39 @@
   .card p { color: var(--muted); font-size: .94rem; line-height: 1.55; margin: 0; }
 
   /* ---------- quote ---------- */
-  /* An editorial pull-quote rather than a centred slab: the portrait anchors
-     the left, the text runs at a readable measure beside it, and the payoff
-     line gets its own weight instead of being buried mid-paragraph. */
-  .quote { background: #0B6E4F; color: #f1f8f4; padding: 92px 0 86px; }
+  /* No band any more. The section sits on the same canvas as everything else
+     and is marked out by a dotted grid that fades to nothing on all four
+     sides, so it reads as a pause rather than an interruption. The dots live
+     on a pseudo-element purely so the mask doesn't touch the text. */
+  .quote { position: relative; padding: 104px 0 96px; overflow: hidden; }
+  .quote::before {
+    content: ""; position: absolute; inset: 0; pointer-events: none;
+    background-image: radial-gradient(circle at 1px 1px, var(--dot) 1.4px, transparent 0);
+    background-size: 22px 22px;
+    -webkit-mask-image: radial-gradient(ellipse 66% 60% at 50% 50%, #000 26%, transparent 74%);
+            mask-image: radial-gradient(ellipse 66% 60% at 50% 50%, #000 26%, transparent 74%);
+  }
+  .quote > .wrap { position: relative; }
+
   .quote-grid {
-    display: grid; grid-template-columns: 148px minmax(0, 34rem);
-    gap: 44px; align-items: start; justify-content: center;
+    display: grid; grid-template-columns: 112px minmax(0, 34rem);
+    gap: 40px; align-items: start; justify-content: center;
   }
-  .portrait {
-    width: 148px; height: 148px; border-radius: 50%; object-fit: cover;
-    box-shadow: 0 10px 30px rgba(0,0,0,.22);
-  }
+  .portrait { width: 112px; height: 112px; border-radius: 50%; object-fit: cover; }
   .quote blockquote { margin: 0; }
   .quote blockquote p {
     margin: 0 0 20px;
     font-size: clamp(1.16rem, 2.2vw, 1.44rem);
     line-height: 1.56; font-weight: 400; letter-spacing: -0.012em;
-    color: #f1f8f4;
+    color: var(--ink);
   }
   .quote .punch { font-weight: 600; margin-bottom: 0; }
-  .quote figcaption { margin-top: 26px; font-size: .94rem; color: rgba(241,248,244,.66); }
+  .quote figcaption { margin-top: 26px; font-size: .94rem; color: var(--muted); }
   .quote figcaption a {
-    color: #ffffff; font-weight: 600; text-decoration: none;
-    border-bottom: 1px solid rgba(255,255,255,.4); padding-bottom: 1px;
+    color: var(--ink); font-weight: 600; text-decoration: none;
+    border-bottom: 1px solid var(--hair); padding-bottom: 1px;
   }
-  .quote figcaption a:hover { border-bottom-color: #fff; }
+  .quote figcaption a:hover { border-bottom-color: var(--ink); }
 
   /* ---------- gallery ---------- */
   .gallery { padding: 84px 0 72px; }
@@ -158,16 +167,16 @@
     .hero-phones { max-width: 520px; }
     .cards { grid-template-columns: 1fr 1fr; }
     .shots { grid-template-columns: 1fr 1fr; }
-    .quote-grid { grid-template-columns: 120px minmax(0,1fr); gap: 32px; }
-    .portrait { width: 120px; height: 120px; }
+    .quote-grid { grid-template-columns: 104px minmax(0,1fr); gap: 30px; }
+    .portrait { width: 104px; height: 104px; }
   }
   @media (max-width: 560px) {
     .hero { padding: 48px 0 36px; }
     .cards { grid-template-columns: 1fr; padding-bottom: 60px; }
     .shots { grid-template-columns: 1fr 1fr; gap: 14px; }
-    .quote { padding: 64px 0 58px; }
-    .quote-grid { grid-template-columns: 1fr; gap: 28px; justify-content: start; }
-    .portrait { width: 104px; height: 104px; }
+    .quote { padding: 70px 0 64px; }
+    .quote-grid { grid-template-columns: 1fr; gap: 24px; justify-content: start; }
+    .portrait { width: 88px; height: 88px; }
   }
 </style>
 </head>
@@ -292,7 +301,7 @@
 <footer>
   <div class="wrap foot">
     <a href="/privacy.html">Privacy Policy</a>
-    <a href="/terms.html">Terms of Use</a>
+    <a href="/terms.html">Terms</a>
     <a href="/support.html">Support</a>
   </div>
 </footer>
