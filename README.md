@@ -37,10 +37,10 @@ a site saved to a Home Screen matches the App Store listing.
 *width*, not `-Z`, which scales by the longest side and leaves them too soft
 for a retina screen.
 
-One thing still needs a real value before submitting: the App Store button in
-`index.html` is a lookalike, and Apple requires their own "Download on the App
-Store" badge artwork, from
-<https://developer.apple.com/app-store/marketing/guidelines/>.
+The hero shows a "Coming soon to the App Store" marker rather than a download
+button. At launch, replace it with Apple's own badge artwork from
+<https://developer.apple.com/app-store/marketing/guidelines/> — they require
+their image, not a lookalike — linked to the real listing.
 The App Store button is the only placeholder left.
 
 ## Apple's requirements
