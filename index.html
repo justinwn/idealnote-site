@@ -41,6 +41,16 @@
   }
 
   * { box-sizing: border-box; }
+  :focus-visible {
+    outline: 2px solid var(--ink);
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+  .quote figcaption a:focus-visible, .foot a:focus-visible { outline-offset: 4px; }
+  @media (prefers-reduced-motion: reduce) {
+    * { animation-duration: .01ms !important; transition-duration: .01ms !important; }
+    html { scroll-behavior: auto; }
+  }
   html { scroll-behavior: smooth; }
   body {
     margin: 0;
@@ -153,7 +163,10 @@
   /* ---------- gallery ---------- */
   .gallery { padding: 84px 0 72px; }
   .gallery h2 { color: var(--ink); font-size: 1.45rem; margin: 0 0 12px; letter-spacing: -0.02em; }
-  .gallery > .wrap > p { color: var(--muted); max-width: 40rem; margin: 0 0 44px; }
+  .gallery > .wrap > p {
+    color: var(--muted); max-width: 34rem; margin: 0 0 44px;
+    font-size: .96rem; line-height: 1.62;
+  }
   .shots { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
 
   /* ---------- footer ---------- */
@@ -221,12 +234,12 @@
       <p class="tagline">for think out loud thinkers</p>
 
       <ul class="features">
-        <li><span class="chip c-note"><svg viewBox="0 0 24 24"><use href="#i-mic"/></svg></span>Record whatever, whenever</li>
-        <li><span class="chip c-idea"><svg viewBox="0 0 24 24"><use href="#i-text"/></svg></span>Quick summaries</li>
-        <li><span class="chip c-todo"><svg viewBox="0 0 24 24"><use href="#i-check"/></svg></span>To-dos, found and sorted</li>
-        <li><span class="chip c-diary"><svg viewBox="0 0 24 24"><use href="#i-search"/></svg></span>Search by words or what you mean</li>
-        <li><span class="chip c-note"><svg viewBox="0 0 24 24"><use href="#i-watch"/></svg></span>Apple Watch and Reminders</li>
-        <li><span class="chip c-todo"><svg viewBox="0 0 24 24"><use href="#i-lock"/></svg></span>Everything stays on your iPhone</li>
+        <li><span class="chip c-note"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="#i-mic"/></svg></span>Record whatever, whenever</li>
+        <li><span class="chip c-idea"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="#i-text"/></svg></span>Quick summaries</li>
+        <li><span class="chip c-todo"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="#i-check"/></svg></span>To-dos, found and sorted</li>
+        <li><span class="chip c-diary"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="#i-search"/></svg></span>Search by words or what you mean</li>
+        <li><span class="chip c-note"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="#i-watch"/></svg></span>Apple Watch and Reminders</li>
+        <li><span class="chip c-todo"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="#i-lock"/></svg></span>Everything stays on your iPhone</li>
       </ul>
 
       <!-- TODO before launch: replace this with Apple's official "Download on
@@ -246,22 +259,22 @@
 
 <section class="wrap cards">
   <article class="card">
-    <span class="chip c-note"><svg viewBox="0 0 24 24"><use href="#i-mic"/></svg></span>
+    <span class="chip c-note"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="#i-mic"/></svg></span>
     <h3>Easy and quick recording</h3>
     <p>Record anytime, anywhere, from your iPhone or Apple Watch. A widget, the Control Centre button or the Action Button all start a note in one tap.</p>
   </article>
   <article class="card">
-    <span class="chip c-idea"><svg viewBox="0 0 24 24"><use href="#i-text"/></svg></span>
+    <span class="chip c-idea"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="#i-text"/></svg></span>
     <h3>Summarized and detected reminders</h3>
     <p>Turn any shower thought, rambling or half-formed idea into an ideal note. Everything is summarized, and to-dos are picked out for you to keep.</p>
   </article>
   <article class="card">
-    <span class="chip c-todo"><svg viewBox="0 0 24 24"><use href="#i-check"/></svg></span>
+    <span class="chip c-todo"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="#i-check"/></svg></span>
     <h3>Synced with Apple Reminders</h3>
     <p>Kept to-dos are sorted by theme into the Reminders lists you already use, so your to-do list feels contextual rather than bolted on.</p>
   </article>
   <article class="card">
-    <span class="chip c-diary"><svg viewBox="0 0 24 24"><use href="#i-search"/></svg></span>
+    <span class="chip c-diary"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="#i-search"/></svg></span>
     <h3>Organized for easy search</h3>
     <p>Search a specific word, or roughly what you meant. Browse by month to zoom out, and a year in review to wrap it up. Topics show what keeps coming back.</p>
   </article>
@@ -271,7 +284,7 @@
   <div class="wrap">
     <figure class="quote-grid" style="margin:0">
       <img class="portrait" src="assets/justine.jpg" width="320" height="320"
-           alt="Justine Win, who made ideal note." loading="lazy" decoding="async">
+           alt="Justine Win" loading="lazy" decoding="async">
       <div>
         <blockquote>
           <p>I always get my best ideas when I’m alone in a sauna or a steam room.
