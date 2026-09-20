@@ -32,13 +32,11 @@ hand-written — nothing generates them.
 *width*, not `-Z`, which scales by the longest side and leaves them too soft
 for a retina screen.
 
-Two things still need a real value before submitting:
-
-- The App Store button in `index.html` is a lookalike. Apple requires their
-  own "Download on the App Store" badge artwork, from
-  <https://developer.apple.com/app-store/marketing/guidelines/>.
-- `support.html` has a placeholder where the contact address goes. Apple
-  requires the Support URL to offer a genuine way to reach you.
+One thing still needs a real value before submitting: the App Store button in
+`index.html` is a lookalike, and Apple requires their own "Download on the App
+Store" badge artwork, from
+<https://developer.apple.com/app-store/marketing/guidelines/>.
+The App Store button is the only placeholder left.
 
 ## Apple's requirements
 

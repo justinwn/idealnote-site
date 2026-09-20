@@ -114,20 +114,32 @@
   .card p { color: var(--muted); font-size: .94rem; line-height: 1.55; margin: 0; }
 
   /* ---------- quote ---------- */
-  .quote { background: #0B6E4F; color: #eaf5f0; padding: 88px 0 80px; text-align: center; }
-  .avatar {
-    width: 62px; height: 62px; border-radius: 50%; margin: 0 auto 30px;
-    background: rgba(255,255,255,.16); color: #fff;
-    display: grid; place-items: center;
-    font-size: 1.5rem; font-weight: 700; letter-spacing: -0.02em;
+  /* An editorial pull-quote rather than a centred slab: the portrait anchors
+     the left, the text runs at a readable measure beside it, and the payoff
+     line gets its own weight instead of being buried mid-paragraph. */
+  .quote { background: #0B6E4F; color: #f1f8f4; padding: 92px 0 86px; }
+  .quote-grid {
+    display: grid; grid-template-columns: 148px minmax(0, 34rem);
+    gap: 44px; align-items: start; justify-content: center;
   }
-  .quote blockquote {
-    margin: 0 auto; max-width: 40rem;
-    font-size: clamp(1.15rem, 2.6vw, 1.45rem); line-height: 1.5; font-weight: 500;
+  .portrait {
+    width: 148px; height: 148px; border-radius: 50%; object-fit: cover;
+    box-shadow: 0 10px 30px rgba(0,0,0,.22);
   }
-  .quote blockquote em { font-style: italic; }
-  .quote .punch { display: block; margin-top: 24px; font-weight: 600; }
-  .quote figcaption { margin-top: 34px; font-size: .9rem; color: rgba(234,245,240,.72); }
+  .quote blockquote { margin: 0; }
+  .quote blockquote p {
+    margin: 0 0 20px;
+    font-size: clamp(1.16rem, 2.2vw, 1.44rem);
+    line-height: 1.56; font-weight: 400; letter-spacing: -0.012em;
+    color: #f1f8f4;
+  }
+  .quote .punch { font-weight: 600; margin-bottom: 0; }
+  .quote figcaption { margin-top: 26px; font-size: .94rem; color: rgba(241,248,244,.66); }
+  .quote figcaption a {
+    color: #ffffff; font-weight: 600; text-decoration: none;
+    border-bottom: 1px solid rgba(255,255,255,.4); padding-bottom: 1px;
+  }
+  .quote figcaption a:hover { border-bottom-color: #fff; }
 
   /* ---------- gallery ---------- */
   .gallery { padding: 84px 0 72px; }
@@ -146,12 +158,16 @@
     .hero-phones { max-width: 520px; }
     .cards { grid-template-columns: 1fr 1fr; }
     .shots { grid-template-columns: 1fr 1fr; }
+    .quote-grid { grid-template-columns: 120px minmax(0,1fr); gap: 32px; }
+    .portrait { width: 120px; height: 120px; }
   }
   @media (max-width: 560px) {
     .hero { padding: 48px 0 36px; }
     .cards { grid-template-columns: 1fr; padding-bottom: 60px; }
     .shots { grid-template-columns: 1fr 1fr; gap: 14px; }
     .quote { padding: 64px 0 58px; }
+    .quote-grid { grid-template-columns: 1fr; gap: 28px; justify-content: start; }
+    .portrait { width: 104px; height: 104px; }
   }
 </style>
 </head>
@@ -244,14 +260,18 @@
 
 <section class="quote">
   <div class="wrap">
-    <!-- Swap the monogram for a photo when there is one. -->
-    <figure style="margin:0">
-      <div class="avatar" aria-hidden="true">J</div>
-      <blockquote>
-        I always get my best ideas whenever I’m alone in a sauna or steam room. One time I said to myself, <em>“damn, I wish I could record my thoughts right now and revisit them later.”</em>
-        <span class="punch">And that’s how ideal note was born.</span>
-      </blockquote>
-      <figcaption>Justine, who made ideal note</figcaption>
+    <figure class="quote-grid" style="margin:0">
+      <img class="portrait" src="assets/justine.jpg" width="320" height="320"
+           alt="Justine Win, who made ideal note." loading="lazy" decoding="async">
+      <div>
+        <blockquote>
+          <p>I always get my best ideas when I’m alone in a sauna or a steam room.
+             One time I said to myself, “damn, I wish I could record my thoughts
+             right now and revisit them later.”</p>
+          <p class="punch">And that’s how ideal note was born.</p>
+        </blockquote>
+        <figcaption><a href="https://justinewin.com/" rel="me">Justine Win</a> made ideal note</figcaption>
+      </div>
     </figure>
   </div>
 </section>
