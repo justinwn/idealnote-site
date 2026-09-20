@@ -38,9 +38,11 @@ a site saved to a Home Screen matches the App Store listing.
 for a retina screen.
 
 The hero shows a "Coming soon to the App Store" marker rather than a download
-button. At launch, replace it with Apple's own badge artwork from
-<https://developer.apple.com/app-store/marketing/guidelines/> — they require
-their image, not a lookalike — linked to the real listing.
+button, with a redrawn Apple mark in it. Apple's identity guidelines want
+their own supplied badge artwork rather than a recreated mark, so treat this
+as a stand-in: at launch, replace the whole marker with the real badge from
+<https://developer.apple.com/app-store/marketing/guidelines/>, linked to the
+listing.
 The App Store button is the only placeholder left.
 
 ## Apple's requirements
