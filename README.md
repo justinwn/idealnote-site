@@ -26,6 +26,11 @@ Remember to move `lastUpdated` in `LegalScreen.swift` at the same time.
 `index.html` is the marketing page and `support.html` is the FAQ. Both are
 hand-written — nothing generates them.
 
+Favicons are generated from Cal Sans by `tools/favicon.swift` in the app repo.
+The tab icon is a single "i" rather than the wordmark, because two stacked
+words are unreadable at 16px. `apple-touch-icon.png` is the real app icon, so
+a site saved to a Home Screen matches the App Store listing.
+
 `assets/` holds screenshots exported from the iPhone 18 Pro Max simulator at
 1320x2868 and resized to 600px wide. To refresh them, seed the simulator
 (`-seedSampleData`), capture, then `sips --resampleWidth 600`. Resize by
