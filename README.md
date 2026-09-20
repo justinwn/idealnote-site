@@ -26,10 +26,27 @@ Remember to move `lastUpdated` in `LegalScreen.swift` at the same time.
 `index.html` is the marketing page and `support.html` is the FAQ. Both are
 hand-written — nothing generates them.
 
+## The wordmark
+
+All four pages carry the logo as **inline SVG**, taken from
+`IdealNote/Resources/logo.svg` in the app repo. It's inlined rather than linked
+so it picks up `--ink` and flips in dark mode, which an `<img>` can't do, and
+so a page that arrives at all arrives with the logo on it.
+
+`privacy.html` and `terms.html` get it automatically, because `genlegal.py`
+reads the same file. `index.html` and `support.html` are hand-written, so if
+the logo ever changes, paste the new markup into those two by hand — everything
+between `<h1 class="wordmark">` / `<a class="wordmark">` and its `</svg>`.
+
+Don't set the name in a font instead. The full stop is drawn by hand, and no
+weight of any font has it.
+
 Favicons are generated from Cal Sans by `tools/favicon.swift` in the app repo.
 The tab icon is a single "i" rather than the wordmark, because two stacked
-words are unreadable at 16px. `apple-touch-icon.png` is the real app icon, so
-a site saved to a Home Screen matches the App Store listing.
+words are unreadable at 16px — and the logo is Cal Sans outlines, so the letter
+matches the drawing. `apple-touch-icon.png` is the real app icon, resized to
+180px, so a site saved to a Home Screen matches the App Store listing; redraw
+it with `tools/appicon.swift` and copy it over.
 
 `assets/` holds screenshots exported from the iPhone 18 Pro Max simulator at
 1320x2868 and resized to 600px wide. To refresh them, seed the simulator
