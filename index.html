@@ -138,7 +138,7 @@
      and is marked out by a dotted grid that fades to nothing on all four
      sides, so it reads as a pause rather than an interruption. The dots live
      on a pseudo-element purely so the mask doesn't touch the text. */
-  .quote { position: relative; padding: 104px 0 96px; overflow: hidden; }
+  .quote { position: relative; padding: 152px 0 144px; overflow: hidden; }
   .quote::before {
     content: ""; position: absolute; inset: 0; pointer-events: none;
     background-image: radial-gradient(circle at 1px 1px, var(--dot) 1.4px, transparent 0);
@@ -198,10 +198,11 @@
     text-wrap: balance;
   }
   .pricing-intro { align-self: center; padding-right: 8px; }
-  .pricing-intro p {
+  .pricing-intro p:not(.status) {
     color: var(--body); margin: 0;
     font-size: .96rem; line-height: 1.62;
   }
+  .pricing-intro .status { margin-top: 24px; }
   .plan {
     background: var(--card); border-radius: 20px;
     padding: 26px 26px 28px; box-shadow: var(--shadow);
@@ -243,7 +244,7 @@
     .hero { padding: 56px 0 48px; }
     .cards { grid-template-columns: 1fr; padding: 64px 24px 72px; }
     .shots { grid-template-columns: 1fr 1fr; gap: 14px; }
-    .quote { padding: 70px 0 64px; }
+    .quote { padding: 104px 0 96px; }
     .quote-grid { grid-template-columns: 1fr; gap: 24px; justify-content: start; }
     .portrait { width: 88px; height: 88px; }
     .pricing { padding: 72px 0 76px; }
@@ -364,7 +365,7 @@
     <div class="shots">
       <div class="phone"><img loading="lazy" decoding="async" src="assets/record.png" width="600" height="1303" alt="Recording in progress, with a timer and a live transcript."></div>
       <div class="phone"><img loading="lazy" decoding="async" src="assets/transcript.png" width="600" height="1303" alt="A finished note with its summary and transcript."></div>
-      <div class="phone"><img loading="lazy" decoding="async" src="assets/search.png" width="600" height="1303" alt="Search results for “the wall”, with the matching words highlighted."></div>
+      <div class="phone"><img loading="lazy" decoding="async" src="assets/search.png" width="600" height="1303" alt="Search results for “the move”, with the matching words highlighted in two notes."></div>
       <div class="phone"><img loading="lazy" decoding="async" src="assets/year.png" width="600" height="1303" alt="Year in review: notes captured, hours recorded, a monthly rhythm and a streak."></div>
     </div>
   </div>
@@ -375,6 +376,7 @@
     <div class="pricing-intro">
       <h2>Small enough to be free. Good enough to pay for.</h2>
       <p>The free plan covers everyday use. Upgrade when you need more room.</p>
+      <p class="status"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="#i-apple"/></svg>Coming soon to the App&nbsp;Store</p>
     </div>
 
     <div class="plan">
